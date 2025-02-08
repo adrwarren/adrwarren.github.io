@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Campground Portfolio</title>
+  <title>Adrian Warren</title>
   <style>
     /* 1. Disable scrolling and set up the full viewport */
     html, body {
@@ -73,9 +73,11 @@
       width: 100%;
       display: flex;
       align-items: flex-end;
+      justify-content: center;  /* Center all items horizontally */
       gap: 20px;
       padding: 0 20px;
       z-index: 4;
+
     }
     /* 7. Tall sign (left-most) spanning 75% of viewport height */
     .sign {
@@ -110,7 +112,7 @@
       transform: rotate(-10deg);
       position: relative;
       z-index: 3;
-      margin-left: -50px;
+      margin-left: -80px;
     }
     /* 10. Campfire image */
     .campfire {
@@ -122,13 +124,11 @@
 </head>
 <body>
   <div class="scene">
-    <!-- Tree-line Background -->
+
     <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
-
-    <!-- Twinkling Stars -->
+    
     <div class="stars" id="stars"></div>
-
-    <!-- Crescent Moon -->
+    
     <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
 
     <!-- Campground Elements: Sign, Tent, Guitar, Campfire -->
