@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adrian Warren</title>
   <style>
-    /* 1. Disable scrolling and set up the full viewport */
+    /* Disable scrolling and set up the full viewport */
     html, body {
       margin: 0;
       padding: 0;
@@ -15,14 +15,14 @@
       background-color: #0b0c10; /* dark night sky */
       font-family: Arial, sans-serif;
     }
-    /* 2. Main scene container */
+    /* Main scene container */
     .scene {
       position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
     }
-    /* 3. Tree-line background at the bottom */
+    /* Tree-line background at the bottom */
     .tree-line {
       position: absolute;
       bottom: 0;
@@ -30,7 +30,7 @@
       width: 100%;
       z-index: 1;
     }
-    /* 4. Stars container and twinkling effect */
+    /* Stars container and twinkling effect */
     .stars {
       position: absolute;
       top: 0;
@@ -53,7 +53,7 @@
       0%, 100% { opacity: 0.8; }
       50% { opacity: 0.2; }
     }
-    /* 5. Crescent moon with hover rotation */
+    /* Crescent moon with hover rotation */
     .moon {
       position: absolute;
       top: 20px;
@@ -65,7 +65,7 @@
     .moon:hover {
       transform: rotate(15deg);
     }
-    /* 6. Campground elements container */
+    /* Campground elements container */
     .campground {
       position: absolute;
       bottom: 0;
@@ -79,7 +79,7 @@
       z-index: 4;
 
     }
-    /* 7. Tall sign (left-most) spanning 75% of viewport height */
+    /* Tall sign (left-most) spanning 75% of viewport height */
     .sign {
       position: relative;
       height: 75vh;
@@ -99,14 +99,23 @@
       padding: 0;
 
     }
+
+    /* New wrapper for tent, guitar, and campfire */
+    .right-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      margin-left: 50px; /* Shifts this entire group to the right */
+    }
+
     
-    /* 8. Tent image */
+    /* Tent image */
     .tent {
       height: 40vh;
       position: relative;
       z-index: 2;
     }
-    /* 9. Guitar image (rotated to lean on the tent) */
+    /* Guitar image (rotated to lean on the tent) */
     .guitar {
       height: 35vh;
       transform: rotate(-10deg);
@@ -136,9 +145,11 @@
       <div class="sign">
         <img src="two-way-wood-sign.png" alt="Sign">
       </div>
-      <img src="portfolio-tent.png" alt="Tent" class="tent">
-      <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
-      <img src="transparent-campfire.png" alt="Campfire" class="campfire">
+      <div class "right-group">
+        <img src="portfolio-tent.png" alt="Tent" class="tent">
+        <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
+        <img src="transparent-campfire.png" alt="Campfire" class="campfire">
+      </div>
     </div>
   </div>
   
