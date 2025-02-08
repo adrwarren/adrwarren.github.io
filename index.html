@@ -20,6 +20,7 @@
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
     /* 3. Tree-line background at the bottom */
     .tree-line {
@@ -86,34 +87,29 @@
       justify-content: flex-end;
     }
     .sign img {
-      height: 150%;
+      height: 100%;
       display: block;
     }
-
-    .sign .name {
-      position: absolute;
-      bottom: 10%;
-      width: 100%;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
     
     /* 8. Tent image */
     .tent {
       height: 40vh;
+      position: relative;
+      z-index: 2;
     }
     /* 9. Guitar image (rotated to lean on the tent) */
     .guitar {
       height: 35vh;
       transform: rotate(-10deg);
+      position: relative;
+      z-index: 3;
+      margin-left: -50px;
     }
     /* 10. Campfire image */
     .campfire {
       height: 30vh;
+      position: relative;
+      z-index: 2;
     }
   </style>
 </head>
@@ -123,14 +119,7 @@
     <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
 
     <!-- Twinkling Stars -->
-    <div class="stars">
-      <span class="star" style="top:10%; left:15%; animation-delay: 0s;"></span>
-      <span class="star" style="top:20%; left:30%; animation-delay: 0.5s;"></span>
-      <span class="star" style="top:5%; left:50%; animation-delay: 1s;"></span>
-      <span class="star" style="top:15%; left:70%; animation-delay: 0.2s;"></span>
-      <span class="star" style="top:8%; left:90%; animation-delay: 0.8s;"></span>
-      <!-- You can add more stars here as needed -->
-    </div>
+    <div class="stars" id="stars"></div>
 
     <!-- Crescent Moon -->
     <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
@@ -145,5 +134,21 @@
       <img src="transparent-campfire.png" alt="Campfire" class="campfire">
     </div>
   </div>
+  
+    <script>
+    // Generate random stars in the sky
+    const starsContainer = document.getElementById('stars');
+    const starCount = 25; // Increase or decrease as needed
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star');
+      // Randomize position within the top 50% of the viewport
+      star.style.top = Math.random() * 50 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 2 + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>
