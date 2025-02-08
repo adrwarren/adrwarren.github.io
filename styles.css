@@ -1,0 +1,58 @@
+/* disable scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100wh;
+  background-color: #2b3e2f;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* for scene container */
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* for background tree line */
+.background {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* for items above tree line */
+.foreground {
+  position: absolute;
+  bottom: 50px; /* adjust to match tree line */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  z-index: 2;
+}
+
+.sign {
+  position: relative;
+  displat: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign img {
+  height: 300px;
+}
+
+.tent, .guitar, .campfire {
+  height: 150px;
+}
+
+.tent { margin-bottom:20px; }
+.guitar { margin-bottom:10px; }
+.campfire { margin-bottom:0; }
