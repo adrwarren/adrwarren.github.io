@@ -1,24 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, inital-scale=1.0>
-        <title>Adrian Warren<title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    
-    <body>
-        <div class="scene">
-            <img src = "transparent-treeline.png" class="background" alt="tree line">
-            <div class="foreground">
-                <div class="sign">
-                    <img src="two-way-wood-sign.png" alt="wood sign with name">
-                </div>
-                <img src="portfolio-tent.png" class="tent" alt="camping tent">
-                <img src="portfolio-guitar.png" class="guitar" alt="acoustic guitar">
-                <img src="transparent-campfire.png" class="campfire" alt="campfire">
-            </div>
-        </div>
-    </body>
-     
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campground Portfolio</title>
+  <style>
+    /* 1. Disable scrolling and set up the full viewport */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      background-color: #0b0c10; /* dark night sky */
+      font-family: Arial, sans-serif;
+    }
+    /* 2. Main scene container */
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    /* 3. Tree-line background at the bottom */
+    .tree-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    /* 4. Stars container and twinkling effect */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%; /* Stars occupy the top half */
+      z-index: 2;
+      pointer-events: none; /* Allow clicks through stars */
+    }
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.2; }
+    }
+    /* 5. Crescent moon with hover rotation */
+    .moon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      z-index: 3;
+      transition: transform 0.5s ease;
+    }
+    .moon:hover {
+      transform: rotate(60deg);
+    }
+    /* 6. Campground elements container */
+    .campground {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      padding: 0 20px;
+      z-index: 4;
+    }
+    /* 7. Tall sign (left-most) spanning 75% of viewport height */
+    .sign {
+      position: relative;
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .sign img {
+      height: 100%;
+      display: block;
+    }
+    .sign .name {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    /* 8. Tent image */
+    .tent {
+      height: 40vh;
+    }
+    /* 9. Guitar image (rotated to lean on the tent) */
+    .guitar {
+      height: 35vh;
+      transform: rotate(-10deg);
+    }
+    /* 10. Campfire image */
+    .campfire {
+      height: 30vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Tree-line Background -->
+    <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
+
+    <!-- Twinkling Stars -->
+    <div class="stars">
+      <span class="star" style="top:10%; left:15%; animation-delay: 0s;"></span>
+      <span class="star" style="top:20%; left:30%; animation-delay: 0.5s;"></span>
+      <span class="star" style="top:5%; left:50%; animation-delay: 1s;"></span>
+      <span class="star" style="top:15%; left:70%; animation-delay: 0.2s;"></span>
+      <span class="star" style="top:8%; left:90%; animation-delay: 0.8s;"></span>
+      <!-- You can add more stars here as needed -->
+    </div>
+
+    <!-- Crescent Moon -->
+    <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
+
+    <!-- Campground Elements: Sign, Tent, Guitar, Campfire -->
+    <div class="campground">
+      <div class="sign">
+        <img src="two-way-wood-sign.png" alt="Sign">
+      </div>
+      <img src="portfolio-tent.png" alt="Tent" class="tent">
+      <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
+      <img src="transparent-campfire.png" alt="Campfire" class="campfire">
+    </div>
+  </div>
+</body>
 </html>
