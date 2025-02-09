@@ -15,6 +15,7 @@
       background-color: #0b0c10; /* dark night sky */
       font-family: Arial, sans-serif;
     }
+    
     /* Main scene container */
     .scene {
       position: relative;
@@ -22,6 +23,7 @@
       height: 100%;
       overflow: hidden;
     }
+    
     /* Tree-line background at the bottom */
     .tree-line {
       position: absolute;
@@ -30,6 +32,7 @@
       width: 100%;
       z-index: 2;
     }
+    
     /* Stars container and twinkling effect */
     .stars {
       position: absolute;
@@ -40,6 +43,7 @@
       z-index: 1;
       pointer-events: none; /* Allow clicks through stars */
     }
+    
     .star {
       position: absolute;
       width: 3px;
@@ -54,6 +58,7 @@
       0%, 100% { opacity: 0.8; }
       50% { opacity: 0.2; }
     }
+    
     /* Crescent moon with hover rotation */
     .moon {
       position: absolute;
@@ -63,9 +68,11 @@
       z-index: 3;
       transition: transform 0.5s ease;
     }
+    
     .moon:hover {
       transform: rotate(15deg);
     }
+    
     /* Campground elements container */
     .campground {
       position: absolute;
@@ -78,8 +85,8 @@
       gap: 20px;
       padding: 0 20px;
       z-index: 4;
-
     }
+    
     /* Tall sign (left-most) spanning 75% of viewport height */
     .sign {
       position: relative;
@@ -89,6 +96,7 @@
       align-items: center;
       justify-content: flex-end;
     }
+    
     .sign img {
       position: absolute;
       bottom: 0;
@@ -98,7 +106,6 @@
       display: block;
       margin: 0;
       padding: 0;
-
     }
 
     /* New wrapper for tent, guitar, and campfire */
@@ -109,7 +116,6 @@
       margin-left: 50%; /* Shifts this entire group to the right */
     }
 
-    
     /* Tent image */
     .tent {
       height: 40vh;
@@ -117,6 +123,7 @@
       z-index: 3;
       margin-right: -50px;
     }
+    
     /* Guitar image (rotated to lean on the tent) */
     .guitar {
       height: 35vh;
@@ -124,7 +131,11 @@
       position: relative;
       z-index: 4;
       margin-left: -120px;
+      transition: transform 0.5s ease;
     }
+    .guitar:hover {
+      transform: rotate(10deg);
+    
     /* 10. Campfire image */
     .campfire {
       height: 30vh;
@@ -132,6 +143,7 @@
       z-index: 3;
       margin-left: 75px;
     }
+    
   </style>
 </head>
 <body>
@@ -163,7 +175,7 @@
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('span');
       star.classList.add('star');
-      // Randomize position within the top 50% of the viewport
+      // Randomize position within viewport
       star.style.top = Math.random() * 100 + '%';
       star.style.left = Math.random() * 100 + '%';
       star.style.animationDelay = Math.random() * 2 + 's';
