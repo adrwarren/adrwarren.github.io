@@ -19,7 +19,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #333;
+      background-color: #0b0c10;
     }
     li {
       float: left;
@@ -107,8 +107,9 @@
           for (let i = 0; i < 20; i++) {
             let star = document.createElement("div");
             star.className = "star";
-            star.style.top = Math.random() * 100 + "px";
-            star.style.left = Math.random() * 100 + "%";
+            star.style.top = (Math.random() * 150) + "px";
+            star.style.left = (Math.random() * 100) + "%";
+            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
             starsContainer.appendChild(star);
           }
         });
@@ -120,10 +121,10 @@
     <div class="portfolio-grid">
       <a href="universalpaperclips.html" class="project"><img src="portfolio-crescent.png" alt="Universal Paperclips Two-Act Play"></a>
       <a href="games.html" class="project"><img src="portfolio-tent.png" alt="Games"></a>
-      <a href="radio.html" class="project"><img src="portfolio.guitar.png" alt="Radio work"></a>
-      <a href="uxui.html" class="project"><img src="portfolio-campfire.png" alt="UX/UI Case Studies"></a>
+      <a href="radio.html" class="project"><img src="portfolio-guitar.png" alt="Radio work"></a>
+      <a href="uxui.html" class="project"><img src="transparent-campfire.png" alt="UX/UI Case Studies"></a>
       <a href="music.html" class="project"><img src="two-way-wood-sign.png" alt="Project 4"></a>
-      <a href="category2.html" class="project"><img src="category2.jpg" alt="Category 2"></a>
+      <a href="webdesign.html" class="project"><img src="tr" alt="Category 2"></a>
     </div>
   </main>
   <footer>
