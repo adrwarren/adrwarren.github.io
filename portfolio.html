@@ -31,7 +31,7 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.4em; /* Increased navbar text size */
     }
     li a:hover {
       background-color: #111;
@@ -46,6 +46,7 @@
       position: relative;
       z-index: 1;
     }
+    /* Stars container covering the full screen with parallax effect */
     .stars {
       position: fixed;
       top: 0;
@@ -65,8 +66,8 @@
       animation: twinkle 2s infinite ease-in-out;
     }
     @keyframes twinkle {
-      0%, 100% { opacity: 0.8 }
-      50% { opacity: 0.2 }
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.2; }
     }
     .portfolio-grid {
       display: grid;
@@ -74,19 +75,21 @@
       gap: 20px;
       padding: 20px;
     }
-    .portfolio-grid a:nth-child(3n) {
-      grid-column: span 2;
-      display: flex;
-      justify-content: center;
+    .project {
+      text-align: center;
     }
-    .project img {
+    .project a img {
       width: 200px;
       height: auto;
       border-radius: 10px;
       transition: transform 0.3s;
     }
-    .project img:hover {
+    .project a img:hover {
       transform: scale(1.1);
+    }
+    .category {
+      margin-top: 10px;
+      font-size: 1.4em; /* Bigger category text */
     }
     .treeline {
       width: 100%;
@@ -96,7 +99,7 @@
   </style>
 </head>
 <body>
-  <!--navbar-->
+  <!-- Navbar -->
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a class="active" href="portfolio.html">Projects</a></li>
@@ -104,34 +107,55 @@
   </ul>
   <header>
     <h1 id="header">Projects</h1>
-    <div id="stars" class="stars">
-      <script>
-        const starsContainer = document.getElementById('stars');
-        const starCount = 70; 
-        for (let i = 0; i < starCount; i++) {
-          const star = document.createElement('span');
-          star.classList.add('star');
-          // Randomizes position
-          star.style.top = Math.random() * 100 + '%';
-          star.style.left = Math.random() * 100 + '%';
-          star.style.animationDelay = Math.random() * 2 + 's';
-          starsContainer.appendChild(star);
-        }
-      </script>
-    </div>
+    <div id="stars" class="stars"></div>
   </header>
-  <!--projects-->
+  <!-- Projects -->
   <main>
     <div class="portfolio-grid">
-      <a href="uxui.html" class="project"><img src="images/wireframe.png" alt="UX Case Studies"></a>
-      <a href="games.html" class="project"><img src="images/bananaman.png" alt="Game Design"></a>
-      <a href="radio.html" class="project"><img src="images/portfolio-radio.png" alt="Radio and Podcasting"></a>
-      <a href="playwriting" class="project"><img src="images/universal-paperclips-art.png" alt="Playwriting and Awards"></a>
-      <a href="socialmedia.html" class="project"><img src="images/portfolio-media.png" alt="Social Media Work"></a>
+      <div class="project">
+        <a href="uxui.html"><img src="images/portfolio-wireframe.png" alt="UX Case Studies"></a>
+        <div class="category">UX Case Studies</div>
+      </div>
+      <div class="project">
+        <a href="games.html"><img src="images/bananaman.png" alt="Game Design"></a>
+        <div class="category">Game Design</div>
+      </div>
+      <div class="project">
+        <a href="radio.html"><img src="images/portfolio-radio.png" alt="Radio and Podcasting"></a>
+        <div class="category">Radio and Podcasting</div>
+      </div>
+      <div class="project">
+        <a href="playwriting"><img src="images/universal-paperclips-art.png" alt="Playwriting and Awards"></a>
+        <div class="category">Playwriting and Awards</div>
+      </div>
+      <div class="project">
+        <a href="socialmedia.html"><img src="images/portfolio-media.png" alt="Social Media Work"></a>
+        <div class="category">Social Media Work</div>
+      </div>
     </div>
   </main>
   <footer>
     <img src="transparent-treeline.png" alt="Tree Line" class="treeline">
   </footer>
+  
+  <script>
+    // Generate stars across the full screen
+    const starsContainer = document.getElementById('stars');
+    const starCount = 70; 
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star');
+      // Randomizes position within the full screen
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 2 + 's';
+      starsContainer.appendChild(star);
+    }
+    
+    // Parallax effect for stars: moves stars slowly as you scroll
+    window.addEventListener('scroll', function() {
+      starsContainer.style.transform = 'translateY(' + (window.pageYOffset * 0.2) + 'px)';
+    });
+  </script>
 </body>
 </html>
