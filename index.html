@@ -62,24 +62,16 @@
     }
     
     /* Crescent moon with hover rotation */
-    .moon-container {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 120px;
-      z-index: 3;
-      cursor: pointer;
-    }
     
     .moon {
-      display: block;
-      top: 20px;
-      right: 20px;
+      position: absolute;
+      top: 25px;
+      right: 25px;
       width: 120px;
       transition: transform 0.5s ease;
     }
     
-    .moon-container:hover.moon {
+    .moon:hover {
       transform: rotate(15deg);
     }
     
