@@ -31,7 +31,7 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      font-size: 1.4em; /* Increased navbar text size */
+      font-size: 1.4em;
     }
     li a:hover {
       background-color: #111;
@@ -46,7 +46,7 @@
       position: relative;
       z-index: 1;
     }
-    /* Stars container covering the full screen with parallax effect */
+    /* Stars container covering the full screen */
     .stars {
       position: fixed;
       top: 0;
@@ -69,11 +69,16 @@
       0%, 100% { opacity: 0.8; }
       50% { opacity: 0.2; }
     }
+    /* Grid layout: 2 items in row 1, 1 item (spanning 2 columns) in row 2, 2 items in row 3 */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
+    }
+    /* Make the third project span both columns */
+    .portfolio-grid .project:nth-child(3) {
+      grid-column: 1 / span 2;
     }
     .project {
       text-align: center;
@@ -89,7 +94,7 @@
     }
     .category {
       margin-top: 10px;
-      font-size: 1.4em; /* Bigger category text */
+      font-size: 1.4em;
     }
     .treeline {
       width: 100%;
@@ -137,7 +142,6 @@
   <footer>
     <img src="transparent-treeline.png" alt="Tree Line" class="treeline">
   </footer>
-  
   <script>
     // Generate stars across the full screen
     const starsContainer = document.getElementById('stars');
@@ -145,17 +149,12 @@
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('span');
       star.classList.add('star');
-      // Randomizes position within the full screen
+      // Randomize position within the full viewport
       star.style.top = Math.random() * 100 + '%';
       star.style.left = Math.random() * 100 + '%';
       star.style.animationDelay = Math.random() * 2 + 's';
       starsContainer.appendChild(star);
     }
-    
-    // Parallax effect for stars: moves stars slowly as you scroll
-    window.addEventListener('scroll', function() {
-      starsContainer.style.transform = 'translateY(' + (window.pageYOffset * 0.2) + 'px)';
-    });
   </script>
 </body>
 </html>
