@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
     body {
-      font-family: Arial, sans-serif;
+      font-family: Lexend, serif;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -30,6 +31,7 @@
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
+      font-size: 1.2em;
     }
     li a:hover {
       background-color: #111;
@@ -45,24 +47,26 @@
       z-index: 1;
     }
     .stars {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100px;
+      pointer-events: none;
+      z-index: -1;
     }
     .star {
       position: absolute;
-      width: 5px;
-      height: 5px;
-      background-color: white;
+      width: 3px;
+      height: 3px;
+      background-color: #fff;
       border-radius: 50%;
-      animation: twinkle 2s infinite;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
     }
     @keyframes twinkle {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
+      0%, 100% { opacity: 0.8 }
+      50% { opacity: 0.2 }
     }
     .portfolio-grid {
       display: grid;
@@ -102,17 +106,17 @@
     <h1 id="header">Projects</h1>
     <div class="stars">
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const starsContainer = document.querySelector(".stars");
-          for (let i = 0; i < 20; i++) {
-            let star = document.createElement("div");
-            star.className = "star";
-            star.style.top = (Math.random() * 150) + "px";
-            star.style.left = (Math.random() * 100) + "%";
-            star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-            starsContainer.appendChild(star);
-          }
-        });
+        const starsContainer = document.getElementById('stars');
+        const starCount = 70; 
+        for (let i = 0; i < starCount; i++) {
+          const star = document.createElement('span');
+          star.classList.add('star');
+          // Randomizes position
+          star.style.top = Math.random() * 100 + '%';
+          star.style.left = Math.random() * 100 + '%';
+          star.style.animationDelay = Math.random() * 2 + 's';
+          starsContainer.appendChild(star);
+        }
       </script>
     </div>
   </header>
