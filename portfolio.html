@@ -53,29 +53,6 @@
       position: relative;
       z-index: 1;
     }
-    /* Stars container covering the full screen */
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 2s infinite ease-in-out;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 0.2; }
-    }
     /* Grid layout: 2 items in row 1, 1 item (spanning 2 columns) in row 2, 2 items in row 3 */
     .portfolio-grid {
       display: grid;
@@ -119,7 +96,6 @@
   </ul>
   <header>
     <h1 id="header">Projects</h1>
-    <div id="stars" class="stars"></div>
   </header>
   <!-- Projects -->
   <main>
@@ -148,19 +124,5 @@
     </div>
     </div>
   </main>
-  <script>
-    // Generate stars across the full screen
-    const starsContainer = document.getElementById('stars');
-    const starCount = 70; 
-    for (let i = 0; i < starCount; i++) {
-      const star = document.createElement('span');
-      star.classList.add('star');
-      // Randomize position within the full viewport
-      star.style.top = Math.random() * 100 + '%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 2 + 's';
-      starsContainer.appendChild(star);
-    }
-  </script>
 </body>
 </html>
