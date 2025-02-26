@@ -152,13 +152,14 @@
   </style>
 </head>
 <body>
+  <a href="contact.html"><img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
   <div class="scene">
 
     <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
     
     <div class="stars" id="stars"></div>
     
-    <a href="contact.html"><img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
+    
 
     <!-- Campground Elements: Sign, Tent, Guitar, Campfire -->
     <div class="campground">
@@ -166,27 +167,28 @@
         <img src="two-way-wood-sign.png" alt="Sign">
       </div>
       <div class "right-group">
-        <a href="portfolio.html"><img src="portfolio-tent.png" alt="Tent" class="tent">
-        <a href="google.com"><img src="portfolio-guitar.png" alt="Guitar" class="guitar">
+        <a href="portfolio.html"><img src="portfolio-tent.png" alt="Tent" class="tent"></a>
+        <a href="google.com"><img src="portfolio-guitar.png" alt="Guitar" class="guitar"></a>
         <img src="transparent-campfire.png" alt="Campfire" class="campfire">
       </div>
     </div>
-  </div>
+       
   
     <script>
     // Generate random stars in the sky
-    const starsContainer = document.getElementById('stars');
-    const starCount = 50; // Increase or decrease as needed
-    for (let i = 0; i < starCount; i++) {
-      const star = document.createElement('span');
-      star.classList.add('star');
-      // Randomize position within viewport
-      star.style.top = Math.random() * 100 + '%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 2 + 's';
-      starsContainer.appendChild(star);
-    }
-  </script>
+      const starsContainer = document.getElementById('stars');
+      const starCount = 50; // Increase or decrease as needed
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('span');
+        star.classList.add('star');
+        // Randomize position within viewport
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 2 + 's';
+        starsContainer.appendChild(star);
+      }
+    </script>
+  </div>
 
 </body>
 </html>
