@@ -1,42 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 body {
-  font-family: Lexend, serif;
+  font-family: 'Lexend', serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
-/* Navbar styles */
 ul.navbar {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 10px 20px;
-  width: 100%;
   background-color: #0b0c10;
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
-  white-space: nowrap; 
-  box-sizing: border-box; 
+  justify-content: flex-start;
 }
 
-/* Navbar items */
 ul.navbar li {
-  display: inline;
-  margin-right: 40px; /* Space between links */
+  margin-right: 20px;
 }
 
-/* Navbar links */
 ul.navbar li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 1.4em;
-  padding: 10px 0;
-  display: inline-block;
+  padding: 10px;
 }
 
-/* Active and hover effects */
 ul.navbar li a:hover {
   background-color: #111;
 }
@@ -45,26 +35,6 @@ ul.navbar li a.active {
   font-weight: bold;
 }
 
-/* Adjust main content to avoid overlap */
 .main-content {
-  margin-top: 50px; /* Prevents content from being covered by navbar */
   padding: 20px;
-  max-width: 100%;
-  overflow: hidden; /* Prevents any rogue horizontal scrolling */
-  box-sizing: border-box; /* Ensures padding doesn't exceed width */
-}
-
-/* Ensure navbar stays in one line without overflow issues */
-@media (max-width: 768px) {
-  ul.navbar {
-    flex-wrap: nowrap; 
-  }
-
-  ul.navbar li {
-    margin-right: 20px;
-  }
-
-  .main-content {
-    margin-top: 60px;
-  }
 }
