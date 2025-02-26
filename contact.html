@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact and Résumé</title>
+    <link rel="stylesheet" href="css/navbar.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
       body {
@@ -16,29 +17,6 @@
         flex-direction: column;
         height: 100vh;
       }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: #0b0c10;
-        position: absolute;
-        left: 20px;
-        top: 20px;
-      }
-      li {
-        display: inline;
-      }
-      li a {
-        display: inline-block;
-        color: #fff;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 1.4em;
-      }
-      li a:hover {
-        background-color: #111;
-      }
       .container {
         display: flex;
         flex-direction: row;
@@ -47,7 +25,6 @@
         gap: 20px;
         align-items: center;
         justify-content: center;
-
       }
       .left, .right {
         flex: 1;
@@ -100,22 +77,24 @@
     </style>
   </head>
   <body>
-    <ul>
+    <ul class="navbar">
       <li><a href="index.html">Home</a></li>
       <li><a href="portfolio.html">Projects</a></li>
-      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="container">
-      <div class="left">
-        <h2>Contact Information</h2>
-        <p>Adrian Warren</p>
-        <p>Email: <a href="mailto:adrnwarren@gmail.com">adrnwarren at gmail dot com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/adrwarren/" target="_blank">linkedin.com/in/adrwarren/</a></p>
-        <p>Itch.io: <a href="https://adrwarren.itch.io/" target="_blank">itch.io/adrwarren</a></p>
-      </div>
-      <div class="right">
-        <h2>Résumé</h2>
-        <iframe src="images/portfolio-resume.pdf"></iframe>
+    <div class="main-content">
+      <div class="container">
+        <div class="left">
+          <h2>Contact Information</h2>
+          <p>Adrian Warren</p>
+          <p>Email: <a href="mailto:adrnwarren@gmail.com">adrnwarren at gmail dot com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/adrwarren/" target="_blank">linkedin.com/in/adrwarren/</a></p>
+          <p>Itch.io: <a href="https://adrwarren.itch.io/" target="_blank">itch.io/adrwarren</a></p>
+        </div>
+        <div class="right">
+          <h2>Résumé</h2>
+          <iframe src="images/portfolio-resume.pdf"></iframe>
+        </div>
       </div>
     </div>
   </body>
