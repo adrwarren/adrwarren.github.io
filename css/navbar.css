@@ -4,19 +4,21 @@ body {
   font-family: Lexend, serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Navbar styles */
 ul.navbar {
   list-style-type: none;
   margin: 0;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   width: 100%;
   background-color: #0b0c10;
   display: flex;
-  align-items: center; 
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-start; 
   white-space: nowrap; 
+  box-sizing: border-box; 
 }
 
 /* Navbar items */
@@ -43,19 +45,23 @@ ul.navbar li a.active {
   font-weight: bold;
 }
 
+/* Adjust main content to avoid overlap */
 .main-content {
-  margin-top: 50px; 
+  margin-top: 50px; /* Prevents content from being covered by navbar */
   padding: 20px;
+  max-width: 100%;
+  overflow: hidden; /* Prevents any rogue horizontal scrolling */
+  box-sizing: border-box; /* Ensures padding doesn't exceed width */
 }
 
+/* Ensure navbar stays in one line without overflow issues */
 @media (max-width: 768px) {
   ul.navbar {
-    flex-wrap: nowrap;  /* Prevents wrapping */
-    overflow-x: auto;   /* Allows scrolling if needed */
+    flex-wrap: nowrap; 
   }
 
   ul.navbar li {
-    margin-right: 20px; /* Slightly less space on small screens */
+    margin-right: 20px;
   }
 
   .main-content {
