@@ -6,33 +6,33 @@ body {
   padding: 0;
 }
 
+/* Navbar styles */
 ul.navbar {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100vh;
+  padding: 10px 20px;  /* Adds spacing around the navbar */
+  width: 100%;
   background-color: #0b0c10;
   display: flex;
-  flex-direction: column;
+  align-items: center;  /* Align items vertically */
 }
 
+/* Navbar items */
 ul.navbar li {
-  width: 100%;
+  display: inline;
+  margin-right: 20px;  /* Space between links */
 }
 
+/* Navbar links */
 ul.navbar li a {
-  display: block;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 1.4em;
+  padding: 10px 0;
+  display: inline-block;
 }
 
+/* Active and hover effects */
 ul.navbar li a:hover {
   background-color: #111;
 }
@@ -43,22 +43,23 @@ ul.navbar li a.active {
 
 /* Adjust main content to avoid overlap */
 .main-content {
-  margin-left: 200px;
+  margin-top: 50px;  /* Prevents content from being covered by navbar */
   padding: 20px;
 }
 
 /* Responsive navbar */
 @media (max-width: 768px) {
   ul.navbar {
-    width: 100%;
-    height: auto;
     flex-direction: row;
-    justify-content: space-around;
-    position: relative;
+    justify-content: left;
+    padding: 10px;
+  }
+
+  ul.navbar li {
+    margin-right: 15px;
   }
 
   .main-content {
-    margin-left: 0;
-    padding-top: 60px;
+    margin-top: 60px;
   }
 }
