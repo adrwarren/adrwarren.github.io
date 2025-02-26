@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
+  <link rel="stylesheet" href="css/navbar.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
     body {
@@ -20,27 +21,6 @@
       display: flex;
       flex-direction: column;
       padding-bottom: 50px;
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #0b0c10;
-    }
-    li {
-      float: left;
-    }
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 1.4em;
-    }
-    li a:hover {
-      background-color: #111;
     }
     header {
       position: relative;
@@ -84,38 +64,37 @@
 </head>
 <body>
   <!-- Navbar -->
-  <ul>
+  <ul class="navbar">
     <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="portfolio.html">Projects</a></li>
+    <li><a href="portfolio.html">Projects</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <header>
-    <h1 id="header">Projects</h1>
-  </header>
+  <div class="main-content">
   <!-- Projects -->
-  <main>
-    <div class="portfolio-grid">
-      <div class="project">
-        <a href="uxui.html"><img src="images/wireframe.png" alt="UX Case Studies"></a>
-        <div class="category">UX Case Studies</div>
+    <main>
+      <div class="portfolio-grid">
+        <div class="project">
+          <a href="uxui.html"><img src="images/wireframe.png" alt="UX Case Studies"></a>
+          <div class="category">UX Case Studies</div>
+        </div>
+        <div class="project">
+          <a href="games.html"><img src="images/bananaman.png" alt="Game Design"></a>
+          <div class="category">Game Design</div>
+        </div>
+        <div class="project">
+          <a href="radio.html"><img src="images/portfolio-radio.png" alt="Radio and Podcasting"></a>
+          <div class="category">Radio and Podcasting</div>
+        </div>
+        <div class="project">
+          <a href="playwriting"><img src="images/universal-paperclips-art.png" alt="Playwriting and Awards"></a>
+          <div class="category">Playwriting and Awards</div>
+        </div>
+        <div class="project">
+          <a href="socialmedia.html"><img src="images/portfolio-media.png" alt="Social Media Work"></a>
+          <div class="category">Social Media Work</div>
+        </div>
       </div>
-      <div class="project">
-        <a href="games.html"><img src="images/bananaman.png" alt="Game Design"></a>
-        <div class="category">Game Design</div>
-      </div>
-      <div class="project">
-        <a href="radio.html"><img src="images/portfolio-radio.png" alt="Radio and Podcasting"></a>
-        <div class="category">Radio and Podcasting</div>
-      </div>
-      <div class="project">
-        <a href="playwriting"><img src="images/universal-paperclips-art.png" alt="Playwriting and Awards"></a>
-        <div class="category">Playwriting and Awards</div>
-      </div>
-      <div class="project">
-        <a href="socialmedia.html"><img src="images/portfolio-media.png" alt="Social Media Work"></a>
-        <div class="category">Social Media Work</div>
-      </div>
-    </div>
+  </div>
   </main>
 </body>
 </html>
