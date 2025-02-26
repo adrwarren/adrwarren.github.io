@@ -22,15 +22,17 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-        overflow: hidden;
         background-color: #0b0c10;
+        position: absolute;
+        left: 20px;
+        top: 20px;
       }
       li {
-        float: left;
+        display: inline;
       }
       li a {
-        display: block;
-        color: white;
+        display: inline-block;
+        color: #fff;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -67,8 +69,12 @@
       }
       .right {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+      }
+      .right h2 {
+        margin-bottom: 10px;
       }
       iframe {
         width: 100%;
@@ -107,6 +113,7 @@
         <p>Itch.io: <a href="https://adrwarren.itch.io/" target="_blank">itch.io/adrwarren</a></p>
       </div>
       <div class="right">
+        <h2>Résumé</h2>
         <iframe src="images/portfolio-resume.pdf"></iframe>
       </div>
     </div>
