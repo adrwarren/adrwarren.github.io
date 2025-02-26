@@ -7,7 +7,7 @@
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-    /* Global Styles */
+    /* Disable scrolling and set up the full viewport */
     html, body {
       margin: 0;
       padding: 0;
@@ -18,7 +18,7 @@
       font-family: 'Lexend', sans-serif;
     }
     
-    /* Main Scene Container */
+    /* Main scene container */
     .scene {
       position: relative;
       width: 100%;
@@ -26,7 +26,7 @@
       overflow: hidden;
     }
     
-    /* Tree-line Background at the Bottom */
+    /* Tree-line background at the bottom */
     .tree-line {
       position: absolute;
       bottom: 0;
@@ -35,15 +35,15 @@
       z-index: 2;
     }
     
-    /* Stars and Twinkling Effect */
+    /* Stars container and twinkling effect */
     .stars {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 80%;
+      height: 80%; /* Stars occupy the top half */
       z-index: 1;
-      pointer-events: none;
+      pointer-events: none; /* Allow clicks through stars */
     }
     
     .star {
@@ -51,8 +51,8 @@
       width: 3px;
       height: 3px;
       background: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
+      background-radius:50%;
+      opacity:0.8;
       animation: twinkle 2s infinite ease-in-out;
     }
     
@@ -61,7 +61,8 @@
       50% { opacity: 0.2; }
     }
     
-    /* Crescent Moon with Hover Rotation */
+    /* Crescent moon with hover rotation */
+    
     .moon {
       position: absolute;
       top: 25px;
@@ -74,7 +75,7 @@
       transform: rotate(15deg);
     }
     
-    /* Campground Elements Container */
+    /* Campground elements container */
     .campground {
       position: absolute;
       bottom: 0;
@@ -82,18 +83,18 @@
       width: 100%;
       display: flex;
       align-items: flex-end;
-      justify-content: center;  /* center elements horizontally */
+      justify-content: center;  /* Center all items horizontally */
       gap: 20px;
       padding: 0 20px;
       z-index: 4;
     }
     
-    /* Tall Sign (Left-Most Element) */
+    /* Tall sign (left-most) spanning 75% of viewport height */
     .sign {
       position: relative;
       height: 90vh;
       display: flex;
-      /* Removed left offset so the sign remains in place */
+      left: 125px;
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
@@ -109,16 +110,16 @@
       margin: 0;
       padding: 0;
     }
-    
-    /* Right-Group: Tent, Guitar, Campfire */
+
+    /* New wrapper for tent, guitar, and campfire */
     .right-group {
       display: flex;
       align-items: flex-end;
       gap: 20px;
-      /* Removed margin-left to keep these elements centered */
+      margin-left: 45%; /* Shifts this entire group to the right */
     }
-    
-    /* Tent Image */
+
+    /* Tent image */
     .tent {
       height: 50vh;
       position: relative;
@@ -127,7 +128,7 @@
       margin-right: -50px;
     }
     
-    /* Guitar Image (rotated to lean on the tent) */
+    /* Guitar image (rotated to lean on the tent) */
     .guitar {
       height: 35vh;
       transform: rotate(-5deg);
@@ -140,58 +141,52 @@
       transform: rotate(10deg);
     }
     
-    /* Campfire Image */
+    /* Campfire image */
     .campfire {
       height: 30vh;
       position: relative;
       z-index: 3;
       margin-left: 75px;
     }
+    
   </style>
 </head>
 <body>
   <div class="scene">
-    <!-- Moon linking to contact page with hover rotation -->
-    <a href="contact.html">
-      <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
-    </a>
-    
+
     <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
+    
     <div class="stars" id="stars"></div>
     
-    <!-- Campground Elements -->
+    <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
+
+    <!-- Campground Elements: Sign, Tent, Guitar, Campfire -->
     <div class="campground">
-      <!-- Sign linking to contact page -->
       <div class="sign">
-        <a href="contact.html">
-          <img src="two-way-wood-sign.png" alt="Sign">
-        </a>
+        <img src="two-way-wood-sign.png" alt="Sign">
       </div>
-      <!-- Right Group: Tent, Guitar, Campfire -->
       <div class="right-group">
-        <a href="portfolio.html">
-          <img src="portfolio-tent.png" alt="Tent" class="tent">
-        </a>
-        <a href="google.com">
-          <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
-        </a>
+        <img src="portfolio-tent.png" alt="Tent" class="tent">
+        <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
         <img src="transparent-campfire.png" alt="Campfire" class="campfire">
       </div>
     </div>
-       
-    <script>
-      // Generate random stars in the sky
-      const starsContainer = document.getElementById('stars');
-      const starCount = 50;
-      for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('span');
-        star.classList.add('star');
-        star.style.top = Math.random() * 100 + '%';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 2 + 's';
-        starsContainer.appendChild(star);
-      }
-    </script>
   </div>
+  
+    <script>
+    // Generate random stars in the sky
+    const starsContainer = document.getElementById('stars');
+    const starCount = 50; // Increase or decrease as needed
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('span');
+      star.classList.add('star');
+      // Randomize position within viewport
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 2 + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>
