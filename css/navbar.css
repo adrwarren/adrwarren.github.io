@@ -10,17 +10,19 @@ body {
 ul.navbar {
   list-style-type: none;
   margin: 0;
-  padding: 10px 20px;  /* Adds spacing around the navbar */
+  padding: 10px 20px; 
   width: 100%;
   background-color: #0b0c10;
   display: flex;
-  align-items: center;  /* Align items vertically */
+  align-items: center; 
+  justify-content: flex-start;
+  white-space: nowrap; 
 }
 
 /* Navbar items */
 ul.navbar li {
   display: inline;
-  margin-right: 20px;  /* Space between links */
+  margin-right: 40px; /* Space between links */
 }
 
 /* Navbar links */
@@ -41,22 +43,19 @@ ul.navbar li a.active {
   font-weight: bold;
 }
 
-/* Adjust main content to avoid overlap */
 .main-content {
-  margin-top: 50px;  /* Prevents content from being covered by navbar */
+  margin-top: 50px; 
   padding: 20px;
 }
 
-/* Responsive navbar */
 @media (max-width: 768px) {
   ul.navbar {
-    flex-direction: row;
-    justify-content: left;
-    padding: 10px;
+    flex-wrap: nowrap;  /* Prevents wrapping */
+    overflow-x: auto;   /* Allows scrolling if needed */
   }
 
   ul.navbar li {
-    margin-right: 15px;
+    margin-right: 20px; /* Slightly less space on small screens */
   }
 
   .main-content {
