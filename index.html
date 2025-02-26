@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adrian Warren</title>
-  
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
     /* Disable scrolling and set up the full viewport */
@@ -17,7 +17,7 @@
       background-color: #0b0c10; /* dark night sky */
       font-family: 'Lexend', sans-serif;
     }
-    
+
     /* Main scene container */
     .scene {
       position: relative;
@@ -25,7 +25,7 @@
       height: 100%;
       overflow: hidden;
     }
-    
+
     /* Tree-line background at the bottom */
     .tree-line {
       position: absolute;
@@ -34,7 +34,7 @@
       width: 100%;
       z-index: 2;
     }
-    
+
     /* Stars container and twinkling effect */
     .stars {
       position: absolute;
@@ -45,7 +45,7 @@
       z-index: 1;
       pointer-events: none; /* Allow clicks through stars */
     }
-    
+
     .star {
       position: absolute;
       width: 3px;
@@ -55,14 +55,14 @@
       opacity:0.8;
       animation: twinkle 2s infinite ease-in-out;
     }
-    
+
     @keyframes twinkle {
       0%, 100% { opacity: 0.8; }
       50% { opacity: 0.2; }
     }
-    
+
     /* Crescent moon with hover rotation */
-    
+
     .moon {
       position: absolute;
       top: 25px;
@@ -70,11 +70,11 @@
       width: 120px;
       transition: transform 0.5s ease;
     }
-    
+
     .moon:hover {
       transform: rotate(15deg);
     }
-    
+
     /* Campground elements container */
     .campground {
       position: absolute;
@@ -88,7 +88,7 @@
       padding: 0 20px;
       z-index: 4;
     }
-    
+
     /* Tall sign (left-most) spanning 75% of viewport height */
     .sign {
       position: relative;
@@ -99,7 +99,7 @@
       align-items: center;
       justify-content: flex-end;
     }
-    
+
     .sign img {
       position: absolute;
       bottom: 0;
@@ -127,7 +127,7 @@
       left: 20%;
       margin-right: -50px;
     }
-    
+
     /* Guitar image (rotated to lean on the tent) */
     .guitar {
       height: 35vh;
@@ -140,7 +140,7 @@
     .guitar:hover {
       transform: rotate(10deg);
     }
-    
+
     /* Campfire image */
     .campfire {
       height: 30vh;
@@ -148,31 +148,31 @@
       z-index: 3;
       margin-left: 75px;
     }
-    
+
   </style>
 </head>
 <body>
   <div class="scene">
 
     <img src="transparent-treeline.png" alt="Tree Line" class="tree-line">
-    
+
     <div class="stars" id="stars"></div>
-    
-    <img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
+
+    <a href="contact.html"><img src="portfolio-crescent.png" alt="Crescent Moon" class="moon">
 
     <!-- Campground Elements: Sign, Tent, Guitar, Campfire -->
     <div class="campground">
       <div class="sign">
         <img src="two-way-wood-sign.png" alt="Sign">
       </div>
-      <div class="right-group">
-        <img src="portfolio-tent.png" alt="Tent" class="tent">
-        <img src="portfolio-guitar.png" alt="Guitar" class="guitar">
+      <div class "right-group">
+        <a href="portfolio.html"><img src="portfolio-tent.png" alt="Tent" class="tent">
+        <a href="google.com"><img src="portfolio-guitar.png" alt="Guitar" class="guitar">
         <img src="transparent-campfire.png" alt="Campfire" class="campfire">
       </div>
     </div>
   </div>
-  
+
     <script>
     // Generate random stars in the sky
     const starsContainer = document.getElementById('stars');
